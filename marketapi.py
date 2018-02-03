@@ -1,7 +1,7 @@
 #import os
 #from flask import Flask, request, session, g, redirect, url_for, abort, jsonify
 from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from models import Market
 
 import simplejson as json
@@ -10,7 +10,7 @@ from flask import jsonify
 """ CONFIG """
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:stringargs@localhost:5432/market_test'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:test@localhost:5432/markets'
 
 db = SQLAlchemy(app)
 
