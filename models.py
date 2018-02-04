@@ -68,5 +68,3 @@ class Market(Base):
     wild_harvested = Column(String)
     update_time = Column(String)
 
-    def json(self):
-        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
